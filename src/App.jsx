@@ -1,7 +1,7 @@
 import './App.css';
 import Nav from './Components/Navigation';
 import Hero from './Components/Hero';
-import ProjectSkills from './Components/ProjectSkills';
+import Skills from './Components/Skills';
 import Footer from './Components/Footer';
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
     <>
     <Nav />
     <Hero />
-    <ProjectSkills />
+    <Skills />
+    <Projects />
     <Footer />
     </>
   )
