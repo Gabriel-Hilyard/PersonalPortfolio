@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Snake from './Snake'
 console.log('Footer working')
 
 function Footer() {
@@ -7,7 +7,11 @@ function Footer() {
 
   return (
     <>
-    
+    <footer>
+      
+    </footer>
+
+    <Snake />
     </>
   )
 }
