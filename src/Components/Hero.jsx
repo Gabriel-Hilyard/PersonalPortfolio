@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hero.css'
 import PlaceHolder from '/src/assets/PlaceHolder.png';
 console.log('Hero working')
 
@@ -11,9 +12,12 @@ function Hero() {
         <div className='heroPortrait'>
             <img src={PlaceHolder}/>
         </div>
+      <div className='heroText'>
         <div className='heroName'>
             <h3>Hi, my name is:</h3>
+          <div className='slide-fade-in'>
             <h1>Gabriel Hilyard</h1>
+          </div>
             <h1>Front-End Engineer</h1>
         </div>
         <div className='heroParagraph'>
@@ -25,6 +29,7 @@ function Hero() {
                 way. I invite you to explore my portfolio to see my work and the 
                 skills I’ve developed.</p>
         </div>
+      </div>
     </section>
     </>
   )
