@@ -15,6 +15,9 @@ function Projects() {
 
   return (
     <>
+    <div className='projectsTitle'>
+      <h1>Projects</h1>
+    </div>
 <div className="flip-card-grid">
       {cards.map((card, index) => (
         <div className="flip-card" key={index}>
