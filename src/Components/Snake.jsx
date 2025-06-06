@@ -8,6 +8,7 @@ const rows = canvasSize.height / gridSize;
 const initialSnake = [[10, 10]];
 const initialDirection = [1, 0];
 
+
 function Snake() {
   const canvasRef = useRef(null);
   const [snake, setSnake] = useState(initialSnake);
@@ -15,6 +16,7 @@ function Snake() {
   const [direction, setDirection] = useState(initialDirection);
   const [isRunning, setIsRunning] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(1)
 
   const resetGame = () => {
     setSnake(initialSnake);
@@ -22,6 +24,7 @@ function Snake() {
     setFood([5, 5]);
     setGameOver(false);
     setIsRunning(true);
+    setScore(1);
   };
 
   const moveSnake = () => {
@@ -41,9 +44,24 @@ function Snake() {
       return;
     }
 
+    for (let segment of newSnake) {
+      if (segment[0] === newHead[0] && segment[1] === newHead[1]) {
+        setGameOver(true);
+        setIsRunning(false);
+        return;
+      }
+    }
+
+
     newSnake.push(newHead);
+
+
     if (newHead[0] === food[0] && newHead[1] === food[1]) {
-      setFood([Math.floor(Math.random() * cols), Math.floor(Math.random() * rows)]);
+      setFood([
+       Math.floor(Math.random() * cols),
+       Math.floor(Math.random() * rows)
+      ]);
+      setScore(prev => prev + 1);
     } else {
       newSnake.shift();
     }
@@ -97,7 +115,12 @@ function Snake() {
     // Draw snake
     context.fillStyle = 'green';
     snake.forEach(([x, y]) => {
+      context.fillStyle = 'green';
       context.fillRect(x * gridSize, y * gridSize, gridSize, gridSize);
+
+      context.strokeStyle = '#000';
+      context.lineWidth = 1;
+      context.strokeRect(x * gridSize, y * gridSize, gridSize, gridSize)
     });
 
     // Draw food
@@ -127,6 +150,9 @@ function Snake() {
         height={canvasSize.height}
         style={{ background: '#222', border: '2px solid #444' }}
       />
+      <p style={{ color: 'white', fontSize: '1rem' }}>
+      Score: {score}
+      </p>
       <p style={{ color: 'white', fontSize: '0.9rem' }}>
         Use arrow keys to play!
       </p>
