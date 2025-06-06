@@ -46,7 +46,7 @@
     height: 500px;
     width: 600px;
     position: absolute;
-    animation: rotate 8s linear infinite;
+    animation: rotate 4s linear infinite;
     z-index: 0;
   }
 
