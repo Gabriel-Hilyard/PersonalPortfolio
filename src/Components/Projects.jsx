@@ -6,10 +6,10 @@ const cards = [
   {
     front: {
       title: 'Import Motorcycle',
-      thumbnail: 'none', //CIRCLE BACK TO FIGURE OUT DISPLAY ISSUES
+      thumbnail: importThumb, //CIRCLE BACK TO FIGURE OUT DISPLAY ISSUES
     },
     back: {
-      description: 'A site for a motorcycle shop built with React and hosted on Vercel.',
+      description: 'A site for a local motorcycle shop built with React and hosted on Vercel.',
       link: 'https://import-motorycle-dev.vercel.app/',
     },
   },
@@ -34,23 +34,21 @@ function Projects() {
     <div className="flip-card" key={index}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          {typeof card.front === 'object' ? (
-            <>
-              <img
-                src={card.front.thumbnail}
-                alt={card.front.title}
-                className="card-thumbnail"
-              />
-              <h3>{card.front.title}</h3>
-            </>
-          ) : (
-            <h3>{card.front}</h3>
-          )}
+        {typeof card.front === 'object' ? (
+  <div
+    className="card-thumbnail-bg"
+    style={{ backgroundImage: `url(${card.front.thumbnail})` }}
+  >
+    <h3 className="card-title">{card.front.title}</h3>
+  </div>
+) : (
+  <h3 className="card-title">{card.front}</h3>
+)}
         </div>
         <div className="flip-card-back">
           {typeof card.back === 'object' ? (
             <>
-              <p>{card.back.description}</p>
+              <p className='card-description'>{card.back.description}</p>
               <a
                 href={card.back.link}
                 target="_blank"

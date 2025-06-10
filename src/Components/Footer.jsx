@@ -19,13 +19,13 @@ function Footer() {
       target='_blank'> 
       <img src={github}
       alt='github link'
-      style={{height: '250px'}}/> </a>
+      style={{height: '200px'}}/> </a>
 
       <a href='https://github.com/Gabriel-Hilyard'
       target='_blank'> 
       <img src={linkedin}
       alt='linkedin link'
-      style={{height: '250px'}}/> </a>
+      style={{height: '200px'}}/> </a>
 
       <div className='email'>
       <h3><a href="mailto:hilyarddev@yahoo.com">hilyarddev@yahoo.com</a></h3>
