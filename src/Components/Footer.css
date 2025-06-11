@@ -20,6 +20,9 @@ footer {
     background-color: darkgray;
 }
 
+.createdBy a {
+    text-decoration: none;
+}
 .email {
     padding-top: 2rem;
 }

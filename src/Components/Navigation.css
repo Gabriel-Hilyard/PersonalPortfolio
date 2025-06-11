@@ -14,6 +14,7 @@ nav {
     gap: 3rem;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    
 }
 
 li {
@@ -29,5 +30,9 @@ li:hover {
     color: white;
     transform: scale(1.2);
     text-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+li a {
+    text-decoration: none;
 }
 

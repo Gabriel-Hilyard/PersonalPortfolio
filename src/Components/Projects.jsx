@@ -1,19 +1,29 @@
 import React from 'react';
 import './Projects.css';
 import importThumb from '../assets/ImportMotorcycle.png';
+import littleThumb from '../assets/littleLemon.png'
 
 const cards = [
   {
     front: {
       title: 'Import Motorcycle',
-      thumbnail: importThumb, //CIRCLE BACK TO FIGURE OUT DISPLAY ISSUES
+      thumbnail: importThumb, 
     },
     back: {
       description: 'A site for a local motorcycle shop built with React and hosted on Vercel.',
       link: 'https://import-motorycle-dev.vercel.app/',
     },
   },
-  { front: 'Front 2', back: 'Back 2' },
+  {
+    front: {
+      title: 'Little Lemon',
+      thumbnail: littleThumb, 
+    },
+    back: {
+      description: 'A site for a mediterranean restaurant for the meta certificate, built with CRA and hosted on Vercel.',
+      link: 'https://coursera-capstone-project-qy5p.vercel.app/',
+    },
+  },
   { front: 'Front 3', back: 'Back 3' },
   { front: 'Front 4', back: 'Back 4' },
   { front: 'Front 5', back: 'Back 5' },
@@ -48,7 +58,7 @@ function Projects() {
         <div className="flip-card-back">
           {typeof card.back === 'object' ? (
             <>
-              <p className='card-description'>{card.back.description}</p>
+              <p className='card-descriptionnpm r'>{card.back.description}</p>
               <a
                 href={card.back.link}
                 target="_blank"

@@ -12,7 +12,7 @@ function Navigation() {
       <div className='navigation'>
       <ul>
         <li><a>Projects & Skills</a></li>
-        <li><a>Contact Me</a></li>
+        <li><a href="mailto:hilyarddev@yahoo.com">Contact Me</a></li>
         <li><a>Socials</a></li>
       </ul>
       </div>
